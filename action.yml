@@ -1,0 +1,23 @@
+name: 'Github Action to Send Pushover Notifications'
+description: 'Send status updates to Pushover API'
+
+inputs:
+  job-name:
+    description: The job name. Use the expression {{ job.name }} to set it.
+    required: true
+
+  job-status:
+    description: The job status. Use the expression {{ job.status }} to set it.
+    required: true
+
+  pushover-api-token:
+    description: To begin using the Pushover API to send notifications, you must configure the API token.
+    required: true
+
+  pushover-user-key:
+    description: To receive notifications from a Pushover-powered application, service, or website, you need to configure your user key.
+    required: true
+
+runs:
+  using: 'node20'
+  main: 'index.js'
